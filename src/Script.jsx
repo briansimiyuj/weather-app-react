@@ -2,6 +2,7 @@ import Form from './components/Form'
 import WeatherImage from './components/WeatherImage'
 import WeatherTemp from './components/WeatherTemp'
 import WeatherLocation from './components/WeatherLocation'
+import WeatherElement from './components/WeatherElement'
 
 function Script(){
   return (
@@ -14,6 +15,8 @@ function Script(){
       <WeatherTemp/>
 
       <WeatherLocation/>
+      
+      <WeatherElement/>
     
     </div>
   )
