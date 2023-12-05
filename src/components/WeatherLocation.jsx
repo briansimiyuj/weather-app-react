@@ -1,8 +1,8 @@
-const WeatherLocation = () =>{
+const WeatherLocation = ({ location }) =>{
 
     return(
 
-        <div className="weather-location">Nairobi</div>
+        <div className="weather-location">{location}</div>
 
     )
 

@@ -3,18 +3,22 @@ import WeatherImage from './components/WeatherImage'
 import WeatherTemp from './components/WeatherTemp'
 import WeatherLocation from './components/WeatherLocation'
 import WeatherElement from './components/WeatherElement'
+import { useState } from 'react'
 
 function Script(){
+
+  const [location, setLocation] = useState('Nairobi')
+
   return (
     <div className="container">
 
-      <Form/> 
+      <Form setLocation={setLocation}/> 
 
       <WeatherImage/>
 
       <WeatherTemp/>
 
-      <WeatherLocation/>
+      <WeatherLocation location={location}/>
       
       <WeatherElement/>
     

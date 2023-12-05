@@ -1,31 +1,40 @@
 import search from '../img/search.png'
 import { useState } from 'react'
 
-const Form = () =>{
+const Form = ({ setLocation }) =>{
 
-  const [location, setLocation] = useState('')
-
-    return(
-
-        <form>
-
-          <input 
-            type="text"
-            placeholder="Search Location" 
-            value={location}
-            onChange={e => setLocation(e.target.value)}
-          />
+  const [locationInput, setLocationInput] = useState('')
 
 
-          <button className="search-icon">
+  const handleInputChange = (e) =>{
+  
+    setLocationInput(e.target.value)
 
-            <img src={search} alt="search icon"/>
+    setLocation(e.target.value)
+  
+  }
 
-          </button>
+  return(
 
-        </form>
+      <form>
 
-    )
+        <input 
+          type="text"
+          placeholder="Search Location" 
+          value={locationInput}
+          onChange={handleInputChange}
+        />
+
+
+        <button className="search-icon">
+
+          <img src={search} alt="search icon"/>
+
+        </button>
+
+      </form>
+
+  )
 
 }
 
