@@ -13,6 +13,8 @@ function Script(){
 
         [mainHumidity, setMainHumidity] = useState(null),
 
+        [windSpeed, setWindSpeed] = useState(null),
+
         APIKey = "30d95878ab2819e2f838a7f9024d365d"
 
 
@@ -26,12 +28,16 @@ function Script(){
 
          mainTemp = Math.floor(data.main.temp),
 
-         mainHumidity = Math.floor(data.main.humidity)
+         mainHumidity = Math.floor(data.main.humidity),
+
+         windSpeed = Math.floor(data.wind.speed)
 
 
     setMainTemp(mainTemp)
 
     setMainHumidity(mainHumidity)
+
+    setWindSpeed(windSpeed)
   
   }
 
@@ -48,7 +54,10 @@ function Script(){
 
       <WeatherLocation location={location}/>
       
-      <WeatherElement mainHumidity={mainHumidity}/>
+      <WeatherElement 
+        mainHumidity={mainHumidity}
+        windSpeed={windSpeed}
+      />
     
     </div>
   )
