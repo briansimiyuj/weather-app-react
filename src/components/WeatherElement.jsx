@@ -3,7 +3,7 @@ import Data from './Data'
 import humidity from '../img/humidity.png'
 import wind from '../img/wind.png'
 
-const WeatherElement = () =>{
+const WeatherElement = ({ mainHumidity }) =>{
 
     return(
 
@@ -14,7 +14,7 @@ const WeatherElement = () =>{
                 <ElementIcon src={humidity} alt="humidity"/>
 
                 <Data
-                    value={24}
+                    value={mainHumidity}
                     text="Humidity"
                     unit="%"
                 />

@@ -11,6 +11,8 @@ function Script(){
 
         [mainTemp, setMainTemp] = useState(null),
 
+        [mainHumidity, setMainHumidity] = useState(null),
+
         APIKey = "30d95878ab2819e2f838a7f9024d365d"
 
 
@@ -22,10 +24,14 @@ function Script(){
 
          data = await response.json(),
 
-         mainTemp = Math.floor(data.main.temp)
+         mainTemp = Math.floor(data.main.temp),
+
+         mainHumidity = Math.floor(data.main.humidity)
 
 
     setMainTemp(mainTemp)
+
+    setMainHumidity(mainHumidity)
   
   }
 
@@ -42,7 +48,7 @@ function Script(){
 
       <WeatherLocation location={location}/>
       
-      <WeatherElement/>
+      <WeatherElement mainHumidity={mainHumidity}/>
     
     </div>
   )
