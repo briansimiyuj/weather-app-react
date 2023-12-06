@@ -1,12 +1,10 @@
-import clear from '../img/clear.png'
-
-const WeatherImage = () =>{
+const WeatherImage = ({ weatherImage }) =>{
 
     return(
 
         <div className="weather-image">
 
-            <img src={clear} alt="weather-image"/>
+            <img src={weatherImage} alt="weather-image"/>
 
         </div>
 
