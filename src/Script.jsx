@@ -9,6 +9,8 @@ function Script(){
 
   const [location, setLocation] = useState('Nairobi'),
 
+        [mainTemp, setMainTemp] = useState(null),
+
         APIKey = "30d95878ab2819e2f838a7f9024d365d"
 
 
@@ -18,9 +20,12 @@ function Script(){
 
          response = await fetch(URL),
 
-         data = await response.json()
+         data = await response.json(),
 
-    console.log(data)
+         mainTemp = Math.floor(data.main.temp)
+
+
+    setMainTemp(mainTemp)
   
   }
 
@@ -33,7 +38,7 @@ function Script(){
 
       <WeatherImage/>
 
-      <WeatherTemp/>
+      <WeatherTemp mainTemp={mainTemp}/>
 
       <WeatherLocation location={location}/>
       

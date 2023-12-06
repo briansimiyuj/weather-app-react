@@ -1,10 +1,10 @@
-const WeatherTemp = () =>{
+const WeatherTemp = ({ mainTemp }) =>{
 
     return(
 
         <div className="weather-temp">
 
-            <span>24</span>&deg;C
+            <span>{mainTemp}</span>&deg;C
 
         </div>
 
