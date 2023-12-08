@@ -14,9 +14,7 @@ const Form = ({ setLocation }) =>{
   }
 
   
-  const handleSubmit = (e) =>{
-  
-    e.preventDefault()
+  const handleSubmit = () =>{
     
     setLocation(locationInput)
 
@@ -24,7 +22,7 @@ const Form = ({ setLocation }) =>{
 
   return(
 
-      <form onSubmit={() => handleSubmit}>
+      <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
 
         <input 
           type="text"
