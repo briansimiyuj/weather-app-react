@@ -1,22 +1,30 @@
 import search from '../img/search.png'
 import { useState } from 'react'
+import useSearch from '../useSearch'
 
 const Form = ({ setLocation }) =>{
 
   const [locationInput, setLocationInput] = useState('')
-
-
+  
+  
   const handleInputChange = (e) =>{
   
     setLocationInput(e.target.value)
-
-    setLocation(e.target.value)
   
+  }
+
+  
+  const handleSubmit = (e) =>{
+  
+    e.preventDefault()
+    
+    setLocation(locationInput)
+
   }
 
   return(
 
-      <form>
+      <form onSubmit={() => handleSubmit}>
 
         <input 
           type="text"
@@ -26,8 +34,8 @@ const Form = ({ setLocation }) =>{
         />
 
 
-        <button className="search-icon">
-
+        <button className="search-icon" type="button" onClick={handleSubmit}>
+ 
           <img src={search} alt="search icon"/>
 
         </button>
